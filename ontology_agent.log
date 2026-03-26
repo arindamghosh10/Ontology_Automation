@@ -1,0 +1,709 @@
+2026-03-25 18:21:45 │ ontology_agent.main  │ INFO    │ File: D:\ontology_agent_updated\merchants.xlsx
+2026-03-25 18:21:45 │ ontology_agent.main  │ INFO    │ Sheet: Sheet1
+2026-03-25 18:21:45 │ ontology_agent.main  │ INFO    │ Batch size: 20
+2026-03-25 18:21:45 │ ontology_agent.main  │ INFO    │ LLM model: deepseek/deepseek-chat
+2026-03-25 18:21:45 │ ontology_agent.pipeline │ INFO    │ Starting pipeline | File: D:\ontology_agent_updated\merchants.xlsx | Batch: 20
+2026-03-25 18:21:46 │ ontology_agent.excel_handler │ INFO    │ Read 6 merchants from 'Sheet1'
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ Found 6 merchants to process
+2026-03-25 18:21:46 │ ontology_agent.scraper │ INFO    │ Scraper: using Firecrawl API (primary)
+2026-03-25 18:21:46 │ ontology_agent.search_engine │ INFO    │ SearchEngine: using SerpAPI
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ 
+============================================================
+BATCH 1/1 (merchants 1-6/6)
+============================================================
+
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 1/6 — QUICKBOOKS
+############################################################
+
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ Processing: QUICKBOOKS (ID: 50002556, Row: 2)
+2026-03-25 18:21:46 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:21:50 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Industry: Accounting Software
+2026-03-25 18:21:50 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1: Scraping https://quickbooks.intuit.com
+2026-03-25 18:21:58 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1 done: 2851 words, score=15
+2026-03-25 18:21:58 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2: Finding ZoomInfo profile
+2026-03-25 18:22:03 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "QUICKBOOKS"' → 5 results
+2026-03-25 18:22:07 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "QUICKBOOKS" "quickbooks.intuit.com"' → 4 results
+2026-03-25 18:22:21 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] ZoomInfo text from Google cache
+2026-03-25 18:22:21 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 18:22:21 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3: Finding D&B profile
+2026-03-25 18:22:23 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "QUICKBOOKS" company profile' → 5 results
+2026-03-25 18:22:24 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "QUICKBOOKS"' → 5 results
+2026-03-25 18:22:33 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Scraping D&B page...
+2026-03-25 18:22:35 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3 complete: URL=found, checks=4/6, score=10
+2026-03-25 18:22:35 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4: Finding Wikipedia article
+2026-03-25 18:22:42 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" company' → 5 results
+2026-03-25 18:22:43 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" Accounting Software' → 5 results
+2026-03-25 18:22:49 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4 complete: URL=found, checks=6/6, score=15
+2026-03-25 18:22:49 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5: Extracting acquisitions
+2026-03-25 18:22:51 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquisitions history' → 3 results
+2026-03-25 18:22:58 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquired company' → 3 results
+2026-03-25 18:22:59 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5 complete: NONE, score=5
+2026-03-25 18:22:59 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6: Extracting phone numbers
+2026-03-25 18:23:01 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" corporate headquarters phone number' → 3 results
+2026-03-25 18:23:01 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6 complete: 2 numbers found, score=3
+2026-03-25 18:23:01 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7: Finding store locations
+2026-03-25 18:23:01 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Using LLM to find additional locations (have 0 from locator)
+2026-03-25 18:23:02 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7 complete: 0 locations found, score=0
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Confidence: 63/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 5, 'phone_score': 3, 'location_score': 0}
+2026-03-25 18:23:02 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 2 to 'Sheet1'
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] -> Sheet1 + REVIEW (score 63)
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 2/6 — RARE BEAUTY
+############################################################
+
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ Processing: RARE BEAUTY (ID: 50006793, Row: 3)
+2026-03-25 18:23:02 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:23:05 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Industry: RARE BEAUTY belongs to the **"Cosmetics & Beauty"** industry.  
+
+(Note: The website domain is actually **rarebeauty.com**, not 'rarebeutiy.com'.)
+2026-03-25 18:23:05 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1: Scraping https://www.rarebeauty.com
+2026-03-25 18:23:06 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1 done: 1333 words, score=15
+2026-03-25 18:23:06 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2: Finding ZoomInfo profile
+2026-03-25 18:23:09 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "RARE BEAUTY"' → 5 results
+2026-03-25 18:23:10 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "RARE BEAUTY" "rarebeauty.com"' → 5 results
+2026-03-25 18:23:21 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] ZoomInfo text from Google snippet (34 words)
+2026-03-25 18:23:21 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2 complete: URL=found, checks=4/6, score=10
+2026-03-25 18:23:21 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3: Finding D&B profile
+2026-03-25 18:23:22 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "RARE BEAUTY" company profile' → 3 results
+2026-03-25 18:23:34 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "RARE BEAUTY"' → 4 results
+2026-03-25 18:23:45 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Scraping D&B page...
+2026-03-25 18:23:47 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3 complete: URL=found, checks=4/6, score=10
+2026-03-25 18:23:47 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4: Finding Wikipedia article
+2026-03-25 18:23:49 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "RARE BEAUTY" company' → 5 results
+2026-03-25 18:23:50 │ ontology_agent.search_engine │ ERROR   │ SerpAPI error for 'site:wikipedia.org "RARE BEAUTY" RARE BEAUTY belongs to the **"Cosmetics & Beauty"** industry.  
+
+(Note: The website domain is actually **rarebeauty.com**, not 'rarebeutiy.com'.)': Google hasn't returned any results for this query.
+2026-03-25 18:24:21 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4 complete: URL=found, checks=5/6, score=10
+2026-03-25 18:24:21 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5: Extracting acquisitions
+2026-03-25 18:24:24 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquisitions history' → 3 results
+2026-03-25 18:24:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquired company' → 3 results
+2026-03-25 18:24:28 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5 complete: NONE, score=5
+2026-03-25 18:24:28 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6: Extracting phone numbers
+2026-03-25 18:24:31 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" corporate headquarters phone number' → 3 results
+2026-03-25 18:24:31 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6 complete: 3 numbers found, score=3
+2026-03-25 18:24:31 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7: Finding store locations
+2026-03-25 18:24:31 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Found store locator: https://www.rarebeauty.com/pages/international-store-locator
+2026-03-25 18:24:37 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Using LLM to find additional locations (have 3 from locator)
+2026-03-25 18:24:49 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7 complete: 10 locations found, score=10
+2026-03-25 18:24:49 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Confidence: 63/100 | {'website_score': 15, 'zoominfo_score': 10, 'dnb_score': 10, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 3, 'location_score': 10}
+2026-03-25 18:24:49 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 3 to 'Sheet1'
+2026-03-25 18:24:49 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] -> Sheet1 + REVIEW (score 63)
+2026-03-25 18:24:50 │ ontology_agent.excel_handler │ INFO    │ Wrote 10 locations for 'RARE BEAUTY' to 'Location'
+2026-03-25 18:24:50 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] 10 locations written
+2026-03-25 18:24:50 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 3/6 — ALLEGIANT AIR
+############################################################
+
+2026-03-25 18:24:50 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:24:50 │ ontology_agent.pipeline │ INFO    │ Processing: ALLEGIANT AIR (ID: 50000716, Row: 4)
+2026-03-25 18:24:50 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:24:51 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Industry: Low-cost airline" or "Airline Industry
+2026-03-25 18:24:51 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1: Scraping https://www.allegiantair.com
+2026-03-25 18:24:56 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1 done: 510 words, score=15
+2026-03-25 18:24:56 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2: Finding ZoomInfo profile
+2026-03-25 18:24:58 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "ALLEGIANT AIR"' → 5 results
+2026-03-25 18:25:00 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "ALLEGIANT AIR" "allegiantair.com"' → 5 results
+2026-03-25 18:25:08 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] ZoomInfo text from Google snippet (32 words)
+2026-03-25 18:25:08 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 18:25:08 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3: Finding D&B profile
+2026-03-25 18:25:11 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "ALLEGIANT AIR" company profile' → 2 results
+2026-03-25 18:25:14 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "ALLEGIANT AIR"' → 3 results
+2026-03-25 18:25:19 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Scraping D&B page...
+2026-03-25 18:25:21 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3 complete: URL=found, checks=5/6, score=15
+2026-03-25 18:25:21 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4: Finding Wikipedia article
+2026-03-25 18:25:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" company' → 5 results
+2026-03-25 18:25:29 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" Low-cost airline" or "Airline Industry' → 5 results
+2026-03-25 18:25:59 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4 complete: URL=found, checks=5/6, score=10
+2026-03-25 18:25:59 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5: Extracting acquisitions
+2026-03-25 18:26:01 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquisitions history' → 3 results
+2026-03-25 18:26:04 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquired company' → 3 results
+2026-03-25 18:26:04 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5 complete: NONE, score=5
+2026-03-25 18:26:04 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6: Extracting phone numbers
+2026-03-25 18:26:08 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" corporate headquarters phone number' → 3 results
+2026-03-25 18:26:08 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6 complete: 2 numbers found, score=3
+2026-03-25 18:26:08 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7: Finding store locations
+2026-03-25 18:26:08 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Using LLM to find additional locations (have 0 from locator)
+2026-03-25 18:26:10 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7 complete: 0 locations found, score=0
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Confidence: 63/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 15, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 3, 'location_score': 0}
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ ERROR   │ [ALLEGIANT AIR] Excel write error: [Errno 13] Permission denied: 'D:\\ontology_agent_updated\\merchants.xlsx'
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 4/6 — DAKOTA WATCH COMPANY
+############################################################
+
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ INFO    │ Processing: DAKOTA WATCH COMPANY (ID: 50000748, Row: 5)
+2026-03-25 18:26:10 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:26:12 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Industry: The industry label for 'DAKOTA WATCH COMPANY' is **"Luxury Watches"** or **"Watch Manufacturing"**.
+2026-03-25 18:26:12 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1: Scraping https://dakotawatch.com
+2026-03-25 18:26:18 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1 done: 2954 words, score=15
+2026-03-25 18:26:18 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2: Finding ZoomInfo profile
+2026-03-25 18:26:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 18:26:28 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "DAKOTA WATCH COMPANY" "dakotawatch.com"' → 5 results
+2026-03-25 18:26:41 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] ZoomInfo text from Google cache
+2026-03-25 18:26:41 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 18:26:41 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3: Finding D&B profile
+2026-03-25 18:26:45 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "DAKOTA WATCH COMPANY" company profile' → 5 results
+2026-03-25 18:26:49 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 18:26:58 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Scraping D&B page...
+2026-03-25 18:26:59 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3 complete: URL=found, checks=3/6, score=0
+2026-03-25 18:26:59 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4: Finding Wikipedia article
+2026-03-25 18:27:01 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" company' → 5 results
+2026-03-25 18:27:02 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" The industry label for 'DAKOTA WATCH COMPANY' is **"Luxury Watches"** or **"Watch Manufacturing"**.' → 4 results
+2026-03-25 18:27:39 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4 complete: URL=found, checks=4/6, score=10
+2026-03-25 18:27:39 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5: Extracting acquisitions
+2026-03-25 18:27:45 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquisitions history' → 3 results
+2026-03-25 18:27:52 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquired company' → 3 results
+2026-03-25 18:27:53 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5 complete: NONE, score=5
+2026-03-25 18:27:53 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6: Extracting phone numbers
+2026-03-25 18:27:58 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" corporate headquarters phone number' → 3 results
+2026-03-25 18:27:58 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6 complete: 56 numbers found, score=5
+2026-03-25 18:27:58 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7: Finding store locations
+2026-03-25 18:27:58 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Using LLM to find additional locations (have 0 from locator)
+2026-03-25 18:27:58 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7 complete: 0 locations found, score=0
+2026-03-25 18:27:58 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Confidence: 50/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 0}
+2026-03-25 18:27:58 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 5 to 'Sheet1'
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_website_text
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_merchant_zoominfo_url
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_zoominfo_page_text
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_merchant_dnb_url
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_dnb_page_text
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_merchant_wikipedia_url
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=corrected_wikipedia_page_text
+2026-03-25 18:27:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=acquisitions
+2026-03-25 18:28:00 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=other_phone_numbers
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] -> REVIEW only (score 50 < 60)
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 5/6 — OASIS C STORE
+############################################################
+
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ Processing: OASIS C STORE (ID: 50000705, Row: 6)
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ WARNING │ [OASIS C STORE] Skipping — Missing or invalid store_domain
+2026-03-25 18:28:00 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 6 to 'Sheet1'
+2026-03-25 18:28:00 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000705, field=store_domain
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch progress: 6/6 — TENNIS EXPRESS
+############################################################
+
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ Processing: TENNIS EXPRESS (ID: 62370804, Row: 7)
+2026-03-25 18:28:00 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 18:28:01 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Industry: Sports Equipment Retail
+2026-03-25 18:28:01 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1: Scraping https://www.tennisexpress.com
+2026-03-25 18:28:09 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1 done: 6709 words, score=15
+2026-03-25 18:28:09 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2: Finding ZoomInfo profile
+2026-03-25 18:28:11 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "TENNIS EXPRESS"' → 5 results
+2026-03-25 18:28:14 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "TENNIS EXPRESS" "tennisexpress.com"' → 5 results
+2026-03-25 18:28:24 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] ZoomInfo text from Google snippet (30 words)
+2026-03-25 18:28:24 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 18:28:24 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3: Finding D&B profile
+2026-03-25 18:28:26 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "TENNIS EXPRESS" company profile' → 4 results
+2026-03-25 18:28:29 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "TENNIS EXPRESS"' → 5 results
+2026-03-25 18:28:39 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Scraping D&B page...
+2026-03-25 18:28:40 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3 complete: URL=found, checks=3/6, score=0
+2026-03-25 18:28:40 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4: Finding Wikipedia article
+2026-03-25 18:28:42 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" company' → 5 results
+2026-03-25 18:28:44 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" Sports Equipment Retail' → 1 results
+2026-03-25 18:29:17 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4 complete: URL=found, checks=4/6, score=10
+2026-03-25 18:29:17 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5: Extracting acquisitions
+2026-03-25 18:29:21 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquisitions history' → 3 results
+2026-03-25 18:29:26 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquired company' → 3 results
+2026-03-25 18:29:28 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5 complete: NONE, score=5
+2026-03-25 18:29:28 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6: Extracting phone numbers
+2026-03-25 18:29:34 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" corporate headquarters phone number' → 3 results
+2026-03-25 18:29:34 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6 complete: 158 numbers found, score=5
+2026-03-25 18:29:34 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7: Finding store locations
+2026-03-25 18:29:34 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Using LLM to find additional locations (have 0 from locator)
+2026-03-25 18:29:36 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7 complete: 0 locations found, score=0
+2026-03-25 18:29:36 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Confidence: 50/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 0}
+2026-03-25 18:29:37 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 7 to 'Sheet1'
+2026-03-25 18:29:37 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_website_text
+2026-03-25 18:29:37 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_merchant_zoominfo_url
+2026-03-25 18:29:37 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_zoominfo_page_text
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_merchant_dnb_url
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_dnb_page_text
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_merchant_wikipedia_url
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=corrected_wikipedia_page_text
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=acquisitions
+2026-03-25 18:29:38 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=other_phone_numbers
+2026-03-25 18:29:38 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] -> REVIEW only (score 50 < 60)
+2026-03-25 19:11:19 │ ontology_agent.main  │ INFO    │ File: D:\ontology_agent_updated\merchants.xlsx
+2026-03-25 19:11:19 │ ontology_agent.main  │ INFO    │ Sheet: Sheet1
+2026-03-25 19:11:19 │ ontology_agent.main  │ INFO    │ Batch size: 20
+2026-03-25 19:11:19 │ ontology_agent.main  │ INFO    │ LLM model: deepseek/deepseek-chat
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ Starting pipeline | D:\ontology_agent_updated\merchants.xlsx | Batch: 20
+2026-03-25 19:11:19 │ ontology_agent.excel_handler │ INFO    │ Read 6 merchants from 'Sheet1'
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ Found 6 merchants
+2026-03-25 19:11:19 │ ontology_agent.scraper │ INFO    │ Scraper: using Firecrawl API (primary)
+2026-03-25 19:11:19 │ ontology_agent.search_engine │ INFO    │ SearchEngine: using SerpAPI
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ 
+============================================================
+BATCH 1/1
+============================================================
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 1/6 — QUICKBOOKS
+############################################################
+
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ Processing: QUICKBOOKS (ID: 50002556, Row: 2)
+2026-03-25 19:11:19 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:11:22 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Industry: Accounting Software
+2026-03-25 19:11:22 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1: Scraping https://quickbooks.intuit.com
+2026-03-25 19:11:24 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1 done: 2532 words, score=15
+2026-03-25 19:11:24 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2: Finding ZoomInfo profile
+2026-03-25 19:11:25 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "QUICKBOOKS"' → 5 results
+2026-03-25 19:11:26 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "QUICKBOOKS" "quickbooks.intuit.com"' → 4 results
+2026-03-25 19:11:35 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] ZoomInfo text from Google cache
+2026-03-25 19:11:35 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 19:11:35 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3: Finding D&B profile
+2026-03-25 19:11:35 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "QUICKBOOKS" company profile' → 5 results
+2026-03-25 19:11:37 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "QUICKBOOKS"' → 5 results
+2026-03-25 19:11:47 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Scraping D&B page...
+2026-03-25 19:11:49 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3 complete: URL=found, checks=4/6, score=10
+2026-03-25 19:11:49 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4: Finding Wikipedia article
+2026-03-25 19:11:49 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" company' → 5 results
+2026-03-25 19:11:50 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" Accounting Software' → 5 results
+2026-03-25 19:11:53 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 19:11:53 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5: Extracting acquisitions
+2026-03-25 19:11:53 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquisitions history' → 3 results
+2026-03-25 19:11:55 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquired company' → 3 results
+2026-03-25 19:11:56 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5 complete: NONE, score=5
+2026-03-25 19:11:56 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6: Extracting phone numbers
+2026-03-25 19:11:57 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" corporate headquarters phone number' → 3 results
+2026-03-25 19:11:57 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6 done: 2 valid numbers, score=3
+2026-03-25 19:11:57 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7: Finding store locations
+2026-03-25 19:11:57 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Using Google Places API
+2026-03-25 19:11:57 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 19:11:57 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] LLM fallback for locations
+2026-03-25 19:11:59 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7 done: 0 locations, score=0
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Confidence: 63/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 5, 'phone_score': 3, 'location_score': 0}
+2026-03-25 19:11:59 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 2 to 'Sheet1'
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] -> Sheet1 + REVIEW flag (score 63)
+2026-03-25 19:11:59 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50002556, field=overall
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 2/6 — RARE BEAUTY
+############################################################
+
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ Processing: RARE BEAUTY (ID: 50006793, Row: 3)
+2026-03-25 19:11:59 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:12:00 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Industry: Cosmetics Industry
+2026-03-25 19:12:00 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1: Scraping https://www.rarebeauty.com
+2026-03-25 19:12:01 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1 done: 1277 words, score=15
+2026-03-25 19:12:01 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2: Finding ZoomInfo profile
+2026-03-25 19:12:02 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "RARE BEAUTY"' → 5 results
+2026-03-25 19:12:03 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "RARE BEAUTY" "rarebeauty.com"' → 5 results
+2026-03-25 19:12:14 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] ZoomInfo text from Google snippet (34 words)
+2026-03-25 19:12:14 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2 complete: URL=found, checks=4/6, score=10
+2026-03-25 19:12:14 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3: Finding D&B profile
+2026-03-25 19:12:15 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "RARE BEAUTY" company profile' → 3 results
+2026-03-25 19:12:16 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "RARE BEAUTY"' → 4 results
+2026-03-25 19:12:27 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Scraping D&B page...
+2026-03-25 19:12:29 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3 complete: URL=found, checks=4/6, score=10
+2026-03-25 19:12:29 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4: Finding Wikipedia article
+2026-03-25 19:12:30 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "RARE BEAUTY" company' → 5 results
+2026-03-25 19:12:32 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "RARE BEAUTY" Cosmetics Industry' → 5 results
+2026-03-25 19:12:35 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 19:12:35 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5: Extracting acquisitions
+2026-03-25 19:12:36 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquisitions history' → 3 results
+2026-03-25 19:12:37 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquired company' → 3 results
+2026-03-25 19:12:39 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5 complete: Plant Apothecary (Unverified), Kate Somerville (Unverified), score=8
+2026-03-25 19:12:39 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6: Extracting phone numbers
+2026-03-25 19:12:39 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" corporate headquarters phone number' → 3 results
+2026-03-25 19:12:39 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6 done: 1 valid numbers, score=3
+2026-03-25 19:12:39 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7: Finding store locations
+2026-03-25 19:12:39 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Using Google Places API
+2026-03-25 19:12:40 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 19:12:40 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Scraping locator: https://www.rarebeauty.com/pages/international-store-locator
+2026-03-25 19:12:41 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] LLM fallback for locations
+2026-03-25 19:12:43 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7 done: 1 locations, score=4
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Confidence: 65/100 | {'website_score': 15, 'zoominfo_score': 10, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 8, 'phone_score': 3, 'location_score': 4}
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ ERROR   │ [RARE BEAUTY] PERMISSION DENIED writing to D:\ontology_agent_updated\merchants.xlsx
+  >> Close the Excel file in Microsoft Excel and rerun. <<
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 3/6 — ALLEGIANT AIR
+############################################################
+
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ INFO    │ Processing: ALLEGIANT AIR (ID: 50000716, Row: 4)
+2026-03-25 19:12:43 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:12:44 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Industry: Airline
+2026-03-25 19:12:44 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1: Scraping https://www.allegiantair.com
+2026-03-25 19:12:44 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1 done: 308 words, score=10
+2026-03-25 19:12:44 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2: Finding ZoomInfo profile
+2026-03-25 19:12:45 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "ALLEGIANT AIR"' → 5 results
+2026-03-25 19:12:46 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "ALLEGIANT AIR" "allegiantair.com"' → 5 results
+2026-03-25 19:12:55 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] ZoomInfo text from Google snippet (32 words)
+2026-03-25 19:12:55 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 19:12:55 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3: Finding D&B profile
+2026-03-25 19:12:55 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "ALLEGIANT AIR" company profile' → 2 results
+2026-03-25 19:12:56 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "ALLEGIANT AIR"' → 3 results
+2026-03-25 19:13:03 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Scraping D&B page...
+2026-03-25 19:13:05 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3 complete: URL=found, checks=4/6, score=10
+2026-03-25 19:13:05 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4: Finding Wikipedia article
+2026-03-25 19:13:05 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" company' → 5 results
+2026-03-25 19:13:12 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" Airline' → 5 results
+2026-03-25 19:13:16 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 19:13:16 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5: Extracting acquisitions
+2026-03-25 19:13:16 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquisitions history' → 3 results
+2026-03-25 19:13:17 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquired company' → 3 results
+2026-03-25 19:13:18 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5 complete: Sun Country Airlines (Unverified), score=8
+2026-03-25 19:13:18 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6: Extracting phone numbers
+2026-03-25 19:13:19 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" corporate headquarters phone number' → 3 results
+2026-03-25 19:13:19 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6 done: 1 valid numbers, score=3
+2026-03-25 19:13:19 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7: Finding store locations
+2026-03-25 19:13:19 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Using Google Places API
+2026-03-25 19:13:20 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 19:13:20 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] LLM fallback for locations
+2026-03-25 19:13:20 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7 done: 0 locations, score=0
+2026-03-25 19:13:20 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Confidence: 61/100 | {'website_score': 10, 'zoominfo_score': 15, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 8, 'phone_score': 3, 'location_score': 0}
+2026-03-25 19:13:20 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 4 to 'Sheet1'
+2026-03-25 19:13:20 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] -> Sheet1 + REVIEW flag (score 61)
+2026-03-25 19:13:21 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000716, field=overall
+2026-03-25 19:13:21 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 4/6 — DAKOTA WATCH COMPANY
+############################################################
+
+2026-03-25 19:13:21 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:13:21 │ ontology_agent.pipeline │ INFO    │ Processing: DAKOTA WATCH COMPANY (ID: 50000748, Row: 5)
+2026-03-25 19:13:21 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:13:22 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Industry: Luxury Watches
+2026-03-25 19:13:22 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1: Scraping https://dakotawatch.com
+2026-03-25 19:13:26 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1 done: 2808 words, score=15
+2026-03-25 19:13:26 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2: Finding ZoomInfo profile
+2026-03-25 19:13:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 19:13:28 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "DAKOTA WATCH COMPANY" "dakotawatch.com"' → 5 results
+2026-03-25 19:13:38 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] ZoomInfo text from Google snippet (31 words)
+2026-03-25 19:13:38 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 19:13:38 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3: Finding D&B profile
+2026-03-25 19:13:38 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "DAKOTA WATCH COMPANY" company profile' → 5 results
+2026-03-25 19:13:40 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 19:13:50 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Scraping D&B page...
+2026-03-25 19:13:51 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3 complete: URL=found, checks=3/6, score=0
+2026-03-25 19:13:51 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4: Finding Wikipedia article
+2026-03-25 19:13:52 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" company' → 5 results
+2026-03-25 19:13:56 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" Luxury Watches' → 2 results
+2026-03-25 19:14:09 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4 done: URL=found, checks=5/6, score=10
+2026-03-25 19:14:09 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5: Extracting acquisitions
+2026-03-25 19:14:10 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquisitions history' → 3 results
+2026-03-25 19:14:11 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquired company' → 3 results
+2026-03-25 19:14:11 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5 complete: NONE, score=5
+2026-03-25 19:14:11 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6: Extracting phone numbers
+2026-03-25 19:14:12 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" corporate headquarters phone number' → 3 results
+2026-03-25 19:14:12 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6 done: 2 valid numbers, score=5
+2026-03-25 19:14:12 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7: Finding store locations
+2026-03-25 19:14:12 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Using Google Places API
+2026-03-25 19:14:12 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 19:14:12 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] LLM fallback for locations
+2026-03-25 19:14:13 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7 done: 0 locations, score=0
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Confidence: 50/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 0}
+2026-03-25 19:14:13 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 5 to 'Sheet1'
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] -> Sheet1 + REVIEW (low score 50)
+2026-03-25 19:14:13 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=overall
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 5/6 — OASIS C STORE
+############################################################
+
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ Processing: OASIS C STORE (ID: 50000705, Row: 6)
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ WARNING │ [OASIS C STORE] Skipping — Missing or invalid store_domain
+2026-03-25 19:14:13 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 6 to 'Sheet1'
+2026-03-25 19:14:13 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000705, field=store_domain
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 6/6 — TENNIS EXPRESS
+############################################################
+
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ Processing: TENNIS EXPRESS (ID: 62370804, Row: 7)
+2026-03-25 19:14:13 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 19:14:15 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Industry: Sporting Goods Retail
+2026-03-25 19:14:15 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1: Scraping https://www.tennisexpress.com
+2026-03-25 19:14:17 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1 done: 4400 words, score=15
+2026-03-25 19:14:17 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2: Finding ZoomInfo profile
+2026-03-25 19:14:17 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "TENNIS EXPRESS"' → 5 results
+2026-03-25 19:14:18 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "TENNIS EXPRESS" "tennisexpress.com"' → 5 results
+2026-03-25 19:14:25 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] ZoomInfo text from Google snippet (30 words)
+2026-03-25 19:14:25 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2 complete: URL=found, checks=5/6, score=15
+2026-03-25 19:14:25 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3: Finding D&B profile
+2026-03-25 19:14:25 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "TENNIS EXPRESS" company profile' → 4 results
+2026-03-25 19:14:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "TENNIS EXPRESS"' → 5 results
+2026-03-25 19:14:35 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Scraping D&B page...
+2026-03-25 19:14:37 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3 complete: URL=found, checks=3/6, score=0
+2026-03-25 19:14:37 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4: Finding Wikipedia article
+2026-03-25 19:14:37 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" company' → 5 results
+2026-03-25 19:14:39 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" Sporting Goods Retail' → 3 results
+2026-03-25 19:14:53 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4 done: URL=found, checks=5/6, score=10
+2026-03-25 19:14:53 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5: Extracting acquisitions
+2026-03-25 19:14:53 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquisitions history' → 3 results
+2026-03-25 19:14:54 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquired company' → 3 results
+2026-03-25 19:14:56 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5 complete: NONE, score=5
+2026-03-25 19:14:56 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6: Extracting phone numbers
+2026-03-25 19:14:56 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" corporate headquarters phone number' → 3 results
+2026-03-25 19:14:56 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6 done: 1 valid numbers, score=5
+2026-03-25 19:14:56 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7: Finding store locations
+2026-03-25 19:14:56 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Using Google Places API
+2026-03-25 19:14:57 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 19:14:57 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] LLM fallback for locations
+2026-03-25 19:15:08 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7 done: 10 locations, score=10
+2026-03-25 19:15:08 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Confidence: 60/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 10}
+2026-03-25 19:15:08 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 7 to 'Sheet1'
+2026-03-25 19:15:08 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] -> Sheet1 + REVIEW flag (score 60)
+2026-03-25 19:15:08 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=overall
+2026-03-25 19:15:08 │ ontology_agent.excel_handler │ INFO    │ Wrote 10 locations for 'TENNIS EXPRESS' to 'Location'
+2026-03-25 19:15:08 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] 10 locations written
+2026-03-25 20:02:53 │ ontology_agent.main  │ INFO    │ File: D:\ontology_agent_updated\merchants.xlsx
+2026-03-25 20:02:53 │ ontology_agent.main  │ INFO    │ Sheet: Sheet1
+2026-03-25 20:02:53 │ ontology_agent.main  │ INFO    │ Batch size: 20
+2026-03-25 20:02:53 │ ontology_agent.main  │ INFO    │ LLM model: deepseek/deepseek-chat
+2026-03-25 20:02:53 │ ontology_agent.pipeline │ INFO    │ Starting pipeline | D:\ontology_agent_updated\merchants.xlsx | Batch: 20
+2026-03-25 20:02:54 │ ontology_agent.excel_handler │ INFO    │ Read 6 merchants from 'Sheet1'
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ Found 6 merchants
+2026-03-25 20:02:54 │ ontology_agent.scraper │ INFO    │ Scraper: Firecrawl API (onlyMainContent=true)
+2026-03-25 20:02:54 │ ontology_agent.search_engine │ INFO    │ SearchEngine: using SerpAPI
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ 
+============================================================
+BATCH 1/1
+============================================================
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 1/6 — QUICKBOOKS
+############################################################
+
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ Processing: QUICKBOOKS (ID: 50002556, Row: 2)
+2026-03-25 20:02:54 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:02:57 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Industry: Accounting Software
+2026-03-25 20:02:57 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1: Scraping https://quickbooks.intuit.com
+2026-03-25 20:02:59 │ ontology_agent.steps.step1_website │ INFO    │ [QUICKBOOKS] Step 1 done: 2149 words, score=15
+2026-03-25 20:02:59 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2: Finding ZoomInfo profile
+2026-03-25 20:03:00 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "QUICKBOOKS"' → 5 results
+2026-03-25 20:03:01 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "QUICKBOOKS" "quickbooks.intuit.com"' → 4 results
+2026-03-25 20:03:13 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Scraping ZoomInfo directly via Firecrawl...
+2026-03-25 20:03:17 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] ZoomInfo direct scrape: 914 words
+2026-03-25 20:03:17 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [QUICKBOOKS] Step 2 done: URL=found, checks=5/6, score=15, text=914 words
+2026-03-25 20:03:17 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3: Finding D&B profile
+2026-03-25 20:03:17 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "QUICKBOOKS" company profile' → 5 results
+2026-03-25 20:03:19 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "QUICKBOOKS"' → 5 results
+2026-03-25 20:03:30 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Scraping D&B via Firecrawl...
+2026-03-25 20:03:32 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] D&B text from snippet: 32 words
+2026-03-25 20:03:32 │ ontology_agent.steps.step3_dnb │ INFO    │ [QUICKBOOKS] Step 3 done: URL=found, checks=4/6, score=10, text=32 words
+2026-03-25 20:03:32 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4: Finding Wikipedia article
+2026-03-25 20:03:32 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" company' → 5 results
+2026-03-25 20:03:33 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "QUICKBOOKS" Accounting Software' → 5 results
+2026-03-25 20:03:36 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [QUICKBOOKS] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 20:03:36 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5: Extracting acquisitions
+2026-03-25 20:03:36 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquisitions history' → 3 results
+2026-03-25 20:03:37 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" acquired company' → 3 results
+2026-03-25 20:03:38 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [QUICKBOOKS] Step 5 complete: In-House Accountant (Unverified), score=8
+2026-03-25 20:03:38 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6: Extracting phone numbers
+2026-03-25 20:03:38 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"QUICKBOOKS" corporate headquarters phone number' → 3 results
+2026-03-25 20:03:38 │ ontology_agent.steps.step6_phone │ INFO    │ [QUICKBOOKS] Step 6 done: 2 valid numbers, score=3
+2026-03-25 20:03:38 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7: Finding store locations
+2026-03-25 20:03:38 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Using Google Places API
+2026-03-25 20:03:39 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 20:03:39 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] LLM fallback for locations
+2026-03-25 20:03:40 │ ontology_agent.steps.step7_locations │ INFO    │ [QUICKBOOKS] Step 7 done: 0 locations, score=0
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] Confidence: 66/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 8, 'phone_score': 3, 'location_score': 0}
+2026-03-25 20:03:40 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 2 to 'Sheet1'
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ [QUICKBOOKS] -> Sheet1 + REVIEW flag (score 66)
+2026-03-25 20:03:40 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50002556, field=overall
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 2/6 — RARE BEAUTY
+############################################################
+
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ Processing: RARE BEAUTY (ID: 50006793, Row: 3)
+2026-03-25 20:03:40 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:03:41 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Industry: Cosmetics and Beauty
+2026-03-25 20:03:41 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1: Scraping https://www.rarebeauty.com
+2026-03-25 20:03:47 │ ontology_agent.steps.step1_website │ INFO    │ [RARE BEAUTY] Step 1 done: 1320 words, score=15
+2026-03-25 20:03:47 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2: Finding ZoomInfo profile
+2026-03-25 20:03:47 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "RARE BEAUTY"' → 5 results
+2026-03-25 20:03:48 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "RARE BEAUTY" "rarebeauty.com"' → 5 results
+2026-03-25 20:03:58 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Scraping ZoomInfo directly via Firecrawl...
+2026-03-25 20:04:03 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] ZoomInfo direct scrape: 1614 words
+2026-03-25 20:04:03 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [RARE BEAUTY] Step 2 done: URL=found, checks=4/6, score=10, text=1614 words
+2026-03-25 20:04:03 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3: Finding D&B profile
+2026-03-25 20:04:03 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "RARE BEAUTY" company profile' → 3 results
+2026-03-25 20:04:04 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "RARE BEAUTY"' → 4 results
+2026-03-25 20:04:16 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Scraping D&B via Firecrawl...
+2026-03-25 20:04:18 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] D&B text from snippet: 31 words
+2026-03-25 20:04:18 │ ontology_agent.steps.step3_dnb │ INFO    │ [RARE BEAUTY] Step 3 done: URL=found, checks=4/6, score=10, text=31 words
+2026-03-25 20:04:18 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4: Finding Wikipedia article
+2026-03-25 20:04:18 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "RARE BEAUTY" company' → 5 results
+2026-03-25 20:04:22 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "RARE BEAUTY" Cosmetics and Beauty' → 5 results
+2026-03-25 20:04:25 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [RARE BEAUTY] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 20:04:25 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5: Extracting acquisitions
+2026-03-25 20:04:25 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquisitions history' → 3 results
+2026-03-25 20:04:27 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" acquired company' → 3 results
+2026-03-25 20:04:29 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [RARE BEAUTY] Step 5 complete: Patchology, Plant Apothecary (Unverified), score=15
+2026-03-25 20:04:29 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6: Extracting phone numbers
+2026-03-25 20:04:29 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"RARE BEAUTY" corporate headquarters phone number' → 3 results
+2026-03-25 20:04:29 │ ontology_agent.steps.step6_phone │ INFO    │ [RARE BEAUTY] Step 6 done: 1 valid numbers, score=3
+2026-03-25 20:04:29 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7: Finding store locations
+2026-03-25 20:04:29 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Using Google Places API
+2026-03-25 20:04:29 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 20:04:29 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] LLM fallback for locations
+2026-03-25 20:04:31 │ ontology_agent.steps.step7_locations │ INFO    │ [RARE BEAUTY] Step 7 done: 0 locations, score=0
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] Confidence: 68/100 | {'website_score': 15, 'zoominfo_score': 10, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 15, 'phone_score': 3, 'location_score': 0}
+2026-03-25 20:04:31 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 3 to 'Sheet1'
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ [RARE BEAUTY] -> Sheet1 + REVIEW flag (score 68)
+2026-03-25 20:04:31 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50006793, field=overall
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 3/6 — ALLEGIANT AIR
+############################################################
+
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ Processing: ALLEGIANT AIR (ID: 50000716, Row: 4)
+2026-03-25 20:04:31 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:04:32 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Industry: Airline
+2026-03-25 20:04:32 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1: Scraping https://www.allegiantair.com
+2026-03-25 20:04:33 │ ontology_agent.steps.step1_website │ INFO    │ [ALLEGIANT AIR] Step 1 done: 154 words, score=5
+2026-03-25 20:04:33 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2: Finding ZoomInfo profile
+2026-03-25 20:04:34 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "ALLEGIANT AIR"' → 5 results
+2026-03-25 20:04:35 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "ALLEGIANT AIR" "allegiantair.com"' → 5 results
+2026-03-25 20:04:44 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Scraping ZoomInfo directly via Firecrawl...
+2026-03-25 20:04:48 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] ZoomInfo direct scrape: 1867 words
+2026-03-25 20:04:49 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [ALLEGIANT AIR] Step 2 done: URL=found, checks=5/6, score=15, text=1867 words
+2026-03-25 20:04:49 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3: Finding D&B profile
+2026-03-25 20:04:49 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "ALLEGIANT AIR" company profile' → 2 results
+2026-03-25 20:04:50 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "ALLEGIANT AIR"' → 3 results
+2026-03-25 20:04:55 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Scraping D&B via Firecrawl...
+2026-03-25 20:04:57 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] D&B text from snippet: 30 words
+2026-03-25 20:04:57 │ ontology_agent.steps.step3_dnb │ INFO    │ [ALLEGIANT AIR] Step 3 done: URL=found, checks=4/6, score=10, text=30 words
+2026-03-25 20:04:57 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4: Finding Wikipedia article
+2026-03-25 20:04:57 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" company' → 5 results
+2026-03-25 20:04:59 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "ALLEGIANT AIR" Airline' → 5 results
+2026-03-25 20:05:02 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [ALLEGIANT AIR] Step 4 done: URL=found, checks=6/6, score=15
+2026-03-25 20:05:02 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5: Extracting acquisitions
+2026-03-25 20:05:02 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquisitions history' → 3 results
+2026-03-25 20:05:03 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" acquired company' → 3 results
+2026-03-25 20:05:05 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [ALLEGIANT AIR] Step 5 complete: Sun Country Airlines, score=15
+2026-03-25 20:05:05 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6: Extracting phone numbers
+2026-03-25 20:05:05 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"ALLEGIANT AIR" corporate headquarters phone number' → 3 results
+2026-03-25 20:05:05 │ ontology_agent.steps.step6_phone │ INFO    │ [ALLEGIANT AIR] Step 6 done: 1 valid numbers, score=3
+2026-03-25 20:05:05 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7: Finding store locations
+2026-03-25 20:05:05 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Using Google Places API
+2026-03-25 20:05:05 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 20:05:05 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] LLM fallback for locations
+2026-03-25 20:05:10 │ ontology_agent.steps.step7_locations │ INFO    │ [ALLEGIANT AIR] Step 7 done: 0 locations, score=0
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] Confidence: 63/100 | {'website_score': 5, 'zoominfo_score': 15, 'dnb_score': 10, 'wikipedia_score': 15, 'acquisitions_score': 15, 'phone_score': 3, 'location_score': 0}
+2026-03-25 20:05:10 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 4 to 'Sheet1'
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ [ALLEGIANT AIR] -> Sheet1 + REVIEW flag (score 63)
+2026-03-25 20:05:10 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000716, field=overall
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 4/6 — DAKOTA WATCH COMPANY
+############################################################
+
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ Processing: DAKOTA WATCH COMPANY (ID: 50000748, Row: 5)
+2026-03-25 20:05:10 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:05:11 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Industry: Watch Manufacturing
+2026-03-25 20:05:11 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1: Scraping https://dakotawatch.com
+2026-03-25 20:05:12 │ ontology_agent.steps.step1_website │ INFO    │ [DAKOTA WATCH COMPANY] Step 1 done: 1785 words, score=15
+2026-03-25 20:05:12 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2: Finding ZoomInfo profile
+2026-03-25 20:05:13 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 20:05:14 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "DAKOTA WATCH COMPANY" "dakotawatch.com"' → 5 results
+2026-03-25 20:05:24 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Scraping ZoomInfo directly via Firecrawl...
+2026-03-25 20:05:29 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] ZoomInfo direct scrape: 1049 words
+2026-03-25 20:05:29 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [DAKOTA WATCH COMPANY] Step 2 done: URL=found, checks=5/6, score=15, text=1049 words
+2026-03-25 20:05:29 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3: Finding D&B profile
+2026-03-25 20:05:29 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "DAKOTA WATCH COMPANY" company profile' → 5 results
+2026-03-25 20:05:31 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "DAKOTA WATCH COMPANY"' → 1 results
+2026-03-25 20:05:42 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Scraping D&B via Firecrawl...
+2026-03-25 20:05:43 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] D&B text from snippet: 29 words
+2026-03-25 20:05:43 │ ontology_agent.steps.step3_dnb │ INFO    │ [DAKOTA WATCH COMPANY] Step 3 done: URL=found, checks=3/6, score=0, text=29 words
+2026-03-25 20:05:43 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4: Finding Wikipedia article
+2026-03-25 20:05:44 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" company' → 5 results
+2026-03-25 20:05:52 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "DAKOTA WATCH COMPANY" Watch Manufacturing' → 5 results
+2026-03-25 20:06:13 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [DAKOTA WATCH COMPANY] Step 4 done: URL=found, checks=5/6, score=10
+2026-03-25 20:06:13 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5: Extracting acquisitions
+2026-03-25 20:06:13 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquisitions history' → 3 results
+2026-03-25 20:06:14 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" acquired company' → 3 results
+2026-03-25 20:06:15 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [DAKOTA WATCH COMPANY] Step 5 complete: NONE, score=5
+2026-03-25 20:06:15 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6: Extracting phone numbers
+2026-03-25 20:06:15 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"DAKOTA WATCH COMPANY" corporate headquarters phone number' → 3 results
+2026-03-25 20:06:15 │ ontology_agent.steps.step6_phone │ INFO    │ [DAKOTA WATCH COMPANY] Step 6 done: 2 valid numbers, score=5
+2026-03-25 20:06:15 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7: Finding store locations
+2026-03-25 20:06:15 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Using Google Places API
+2026-03-25 20:06:16 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 20:06:16 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] LLM fallback for locations
+2026-03-25 20:06:17 │ ontology_agent.steps.step7_locations │ INFO    │ [DAKOTA WATCH COMPANY] Step 7 done: 0 locations, score=0
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] Confidence: 50/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 0}
+2026-03-25 20:06:17 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 5 to 'Sheet1'
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ [DAKOTA WATCH COMPANY] -> Sheet1 + REVIEW (low score 50)
+2026-03-25 20:06:17 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000748, field=overall
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 5/6 — OASIS C STORE
+############################################################
+
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ Processing: OASIS C STORE (ID: 50000705, Row: 6)
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ WARNING │ [OASIS C STORE] Skipping — Missing or invalid store_domain
+2026-03-25 20:06:17 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 6 to 'Sheet1'
+2026-03-25 20:06:17 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=50000705, field=store_domain
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ 
+############################################################
+Batch 6/6 — TENNIS EXPRESS
+############################################################
+
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ Processing: TENNIS EXPRESS (ID: 62370804, Row: 7)
+2026-03-25 20:06:17 │ ontology_agent.pipeline │ INFO    │ ============================================================
+2026-03-25 20:06:19 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Industry: Sporting Goods Retail
+2026-03-25 20:06:19 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1: Scraping https://www.tennisexpress.com
+2026-03-25 20:06:20 │ ontology_agent.steps.step1_website │ INFO    │ [TENNIS EXPRESS] Step 1 done: 2362 words, score=15
+2026-03-25 20:06:20 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2: Finding ZoomInfo profile
+2026-03-25 20:06:20 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com/c "TENNIS EXPRESS"' → 5 results
+2026-03-25 20:06:22 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:zoominfo.com "TENNIS EXPRESS" "tennisexpress.com"' → 5 results
+2026-03-25 20:06:31 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Scraping ZoomInfo directly via Firecrawl...
+2026-03-25 20:06:36 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] ZoomInfo direct scrape: 1321 words
+2026-03-25 20:06:36 │ ontology_agent.steps.step2_zoominfo │ INFO    │ [TENNIS EXPRESS] Step 2 done: URL=found, checks=5/6, score=15, text=1321 words
+2026-03-25 20:06:36 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3: Finding D&B profile
+2026-03-25 20:06:36 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com "TENNIS EXPRESS" company profile' → 4 results
+2026-03-25 20:06:38 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:dnb.com/business-directory "TENNIS EXPRESS"' → 5 results
+2026-03-25 20:06:49 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Scraping D&B via Firecrawl...
+2026-03-25 20:06:50 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] D&B text from snippet: 33 words
+2026-03-25 20:06:50 │ ontology_agent.steps.step3_dnb │ INFO    │ [TENNIS EXPRESS] Step 3 done: URL=found, checks=3/6, score=0, text=33 words
+2026-03-25 20:06:50 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4: Finding Wikipedia article
+2026-03-25 20:06:51 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" company' → 5 results
+2026-03-25 20:06:52 │ ontology_agent.search_engine │ INFO    │ SerpAPI search 'site:wikipedia.org "TENNIS EXPRESS" Sporting Goods Retail' → 3 results
+2026-03-25 20:07:08 │ ontology_agent.steps.step4_wikipedia │ INFO    │ [TENNIS EXPRESS] Step 4 done: URL=found, checks=5/6, score=10
+2026-03-25 20:07:08 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5: Extracting acquisitions
+2026-03-25 20:07:09 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquisitions history' → 3 results
+2026-03-25 20:07:10 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" acquired company' → 3 results
+2026-03-25 20:07:11 │ ontology_agent.steps.step5_acquisitions │ INFO    │ [TENNIS EXPRESS] Step 5 complete: NONE, score=5
+2026-03-25 20:07:11 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6: Extracting phone numbers
+2026-03-25 20:07:11 │ ontology_agent.search_engine │ INFO    │ SerpAPI search '"TENNIS EXPRESS" corporate headquarters phone number' → 3 results
+2026-03-25 20:07:11 │ ontology_agent.steps.step6_phone │ INFO    │ [TENNIS EXPRESS] Step 6 done: 1 valid numbers, score=5
+2026-03-25 20:07:11 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7: Finding store locations
+2026-03-25 20:07:11 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Using Google Places API
+2026-03-25 20:07:12 │ ontology_agent.steps.step7_locations │ WARNING │ Places API status: REQUEST_DENIED
+2026-03-25 20:07:12 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] LLM fallback for locations
+2026-03-25 20:07:13 │ ontology_agent.steps.step7_locations │ INFO    │ [TENNIS EXPRESS] Step 7 done: 0 locations, score=0
+2026-03-25 20:07:13 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] Confidence: 50/100 | {'website_score': 15, 'zoominfo_score': 15, 'dnb_score': 0, 'wikipedia_score': 10, 'acquisitions_score': 5, 'phone_score': 5, 'location_score': 0}
+2026-03-25 20:07:13 │ ontology_agent.excel_handler │ INFO    │ Wrote results for row 7 to 'Sheet1'
+2026-03-25 20:07:13 │ ontology_agent.pipeline │ INFO    │ [TENNIS EXPRESS] -> Sheet1 + REVIEW (low score 50)
+2026-03-25 20:07:14 │ ontology_agent.excel_handler │ INFO    │ Wrote review entry for store_id=62370804, field=overall

@@ -1,0 +1,22 @@
+# Core
+openpyxl>=3.1.0
+httpx>=0.25.0
+python-dotenv>=1.0.0
+
+# LLM
+# (uses httpx directly — no extra package needed)
+
+# Scraping — PRIMARY (sign up at firecrawl.dev)
+# firecrawl-py>=1.0.0   # optional SDK; we use httpx directly
+
+# Scraping — FALLBACK (only needed if FIRECRAWL_API_KEY not set)
+playwright>=1.40.0
+
+# Search
+# serpapi>=0.1.5         # optional SDK; we use httpx directly
+
+# Text processing
+thefuzz>=0.20.0
+python-Levenshtein>=0.23.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
